@@ -30,18 +30,18 @@ export default function HomePage() {
   };
 
   return (
-    <main className="h-screen flex items-center justify-center">
+    <main className="h-screen flex items-center justify-center bg-background">
       <form
         onSubmit={handleLogin}
-        className="bg-white p-6 rounded-lg shadow-md w-96 space-y-4"
+        className="bg-card p-6 rounded-lg shadow-lg w-96 space-y-4 border border-border"
       >
-        <h1 className="text-xl font-bold">Login</h1>
-        {error && <p className="text-red-600">{error}</p>}
+        <h1 className="text-xl font-bold text-card-foreground">Login</h1>
+        {error && <p className="text-red-600 text-sm">{error}</p>}
 
         <input
           type="text"
           placeholder="Username"
-          className="w-full p-2 border rounded"
+          className="w-full bg-input border border-border text-foreground placeholder:text-muted-foreground px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -49,7 +49,7 @@ export default function HomePage() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-2 border rounded"
+          className="w-full bg-input border border-border text-foreground placeholder:text-muted-foreground px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -57,7 +57,7 @@ export default function HomePage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-white text-black font-medium px-4 py-3 rounded-md hover:bg-primary/90 hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
         >
           {loading ? "Logging in..." : "Login"}
         </button>

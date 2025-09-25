@@ -10,6 +10,12 @@ import {
     updateOrderStatusRequest,
     updateOrderStatusFailure,
     updateOrderStatusSuccess,
+    togglePartnerAvaibilityRequest,
+    togglePartnerAvaibilitySuccess,
+    togglePartnerAvaibilityFailure,
+    fetchPartnerDetailsSuccess,
+    fetchPartnerDetailsFailure,
+    fetchPartnerDetailsRequest,
 } from "../slices/partnerSlice";
 
 function* fetchPartnersWorker(): Generator {
@@ -39,8 +45,29 @@ function* updateOrderStatus(action: ReturnType<typeof updateOrderStatusRequest>)
     }
 }
 
+function* togglePartnerAvaibilityStatus(action: ReturnType<typeof togglePartnerAvaibilityRequest>): Generator {
+    try {
+        console.log("action.payload",action.payload)
+        const res = yield call(api.post, `/partners/availability`, action.payload);
+        yield put(togglePartnerAvaibilitySuccess(res.data?.data));
+    } catch (err: any) {
+        yield put(togglePartnerAvaibilityFailure("Failed to update status"));
+    }
+}
+
+function* fetchPartnerDetails(action: ReturnType<typeof fetchPartnerDetailsRequest>): Generator {
+    try {
+        const res = yield call(api.get, `/partners/${action.payload}`);
+        yield put(fetchPartnerDetailsSuccess(res.data?.data));
+    } catch (err: any) {
+        yield put(fetchPartnerDetailsFailure("Failed to update fetch User data"));
+    }
+}
+
 export default function* partnerSaga() {
     yield takeLatest(fetchPartnersRequest.type, fetchPartnersWorker);
     yield takeLatest(fetchPartnersOrdersRequest.type, fetchPartnersOrders);
     yield takeLatest(updateOrderStatusRequest.type, updateOrderStatus);
+    yield takeLatest(togglePartnerAvaibilityRequest.type, togglePartnerAvaibilityStatus);
+    yield takeLatest(fetchPartnerDetailsRequest.type, fetchPartnerDetails);
 }

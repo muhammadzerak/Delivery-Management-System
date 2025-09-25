@@ -7,6 +7,7 @@ export const getOrders = async (req: Request, res: Response) => {
         const orders = await Order.find();
         return success(res, orders, "Orders fetched successfully");
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to fetch orders");
     }
 };
@@ -19,6 +20,7 @@ export const createOrder = async (req: Request, res: Response) => {
 
         return success(res, order, "Order created successfully", 201);
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to create order");
     }
 };
@@ -34,6 +36,7 @@ export const assignOrder = async (req: Request, res: Response) => {
 
         return success(res, order, "Order assigned successfully");
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to assign order");
     }
 };

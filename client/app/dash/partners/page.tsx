@@ -17,8 +17,6 @@ export default function PartnersPage() {
         dispatch(fetchPartnersRequest());
     }, [dispatch]);
 
-    if (error) return <p className="text-red-600">{error}</p>;
-
     return (
         <div>
             <h1 className="text-2xl font-bold mb-4">Delivery Partners</h1>

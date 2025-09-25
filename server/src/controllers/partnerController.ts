@@ -4,11 +4,23 @@ import Order from "../models/Order";
 import { failure, success } from "../utils/response";
 
 
+export const getPartner = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+        const partners = await User.findOne({ _id: id, role: "partner" });
+        return success(res, partners, "Partner fetched successfully");
+    } catch (err) {
+        console.log({ err });
+        return failure(res, "Failed to fetch partner details");
+    }
+};
+
 export const getPartners = async (req: Request, res: Response) => {
     try {
         const partners = await User.find({ role: "partner" });
         return success(res, partners, "Partners fetched successfully");
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to fetch partners");
     }
 };
@@ -34,10 +46,11 @@ export const toggleAvailability = async (req: Request, res: Response) => {
 
 export const getPartnerOrders = async (req: Request, res: Response) => {
     try {
-        const { partnerId } = req.params; // assuming /partners/:partnerId/orders
+        const { partnerId } = req.params;
         const orders = await Order.find({ partnerId });
         return success(res, orders, "Partner orders fetched successfully");
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to fetch partner orders");
     }
 };
@@ -48,6 +61,7 @@ export const getMyOrders = async (req: Request, res: Response) => {
         const orders = await Order.find({ partnerId });
         return success(res, orders, "My orders fetched successfully");
     } catch (err) {
+        console.log({ err });
         return failure(res, "Failed to fetch my orders");
     }
 };

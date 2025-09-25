@@ -41,7 +41,7 @@ export default function OrderCard({ order, onAssign }: OrderCardProps) {
                             <option value="" className="bg-popover text-popover-foreground">
                                 Select Partner
                             </option>
-                            {partners.map((p) => (
+                            {partners?.filter(p => p.available === true)?.map((p) => (
                                 <option key={p._id} value={p._id} className="bg-popover text-popover-foreground">
                                     {p.username}
                                 </option>
@@ -64,35 +64,5 @@ export default function OrderCard({ order, onAssign }: OrderCardProps) {
                 )}
             </div>
         </div>
-        // <div className="p-4 border rounded-lg bg-white shadow-sm">
-        //     <p className="font-bold">Order #{order?._id}</p>
-        //     <p>Status: {order?.status}</p>
-
-        //     {order?.status === "pending" && !order?.partnerId ? (
-        //         <div className="flex items-center gap-2">
-        //             <select
-        //                 value={selectedPartner}
-        //                 onChange={(e) => setSelectedPartner(e.target.value)}
-        //                 className="border px-2 py-1 rounded"
-        //             >
-        //                 <option value="">Select Partner</option>
-        //                 {partners.map((p) => (
-        //                     <option key={p._id} value={p._id}>
-        //                         {p.username}
-        //                     </option>
-        //                 ))}
-        //             </select>
-        //             <button
-        //                 onClick={handleAssign}
-        //                 className="bg-blue-600 text-white px-3 py-1 rounded disabled:bg-gray-400"
-        //                 disabled={!selectedPartner}
-        //             >
-        //                 Assign
-        //             </button>
-        //         </div>
-        //     ) : (
-        //         <p className="text-green-600 font-semibold">Assigned</p>
-        //     )}
-        // </div>
     );
 }

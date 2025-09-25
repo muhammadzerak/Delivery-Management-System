@@ -114,42 +114,5 @@ export default function PartnerOrders() {
                 )}
             </div>
         </div>
-        // <div>
-        //     <h1 className="text-2xl font-bold mb-4">My Orders</h1>
-        //     <div className="space-y-4">
-        //         {loading
-        //             ? <Loader />
-        //             : orders.length > 0 && orders?.map((order) => (
-        //                 <div
-        //                     key={order?._id}
-        //                     className="p-4 border rounded bg-white shadow-sm flex justify-between"
-        //                 >
-        //                     <div>
-        //                         <p className="font-bold">Order #{order?._id}</p>
-        //                         <p>Customer: {order?.title}</p>
-        //                         <p>Status: {order?.status}</p>
-        //                     </div>
-        //                     <div className="flex gap-2 items-center">
-        //                         {order?.status == "pending" &&
-        //                             <button
-        //                                 onClick={() => updateStatus(order?._id, "in-progress")}
-        //                                 className="bg-yellow-500 text-white px-2 rounded"
-        //                             >
-        //                                 Start
-        //                             </button>
-        //                         }
-        //                         {order?.status == "in-progress" &&
-        //                             <button
-        //                                 onClick={() => updateStatus(order?._id, "delivered")}
-        //                                 className="bg-green-600 text-white px-2 rounded"
-        //                             >
-        //                                 Deliver
-        //                             </button>
-        //                         }
-        //                     </div>
-        //                 </div>
-        //             ))}
-        //     </div>
-        // </div>
     );
 }

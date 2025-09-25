@@ -19,7 +19,7 @@ export const assignOrderSchema = z.object({
 
 export const updateStatusSchema = z.object({
     body: z.object({
-        status: z.enum(["pending", "in-progress", "completed", "cancelled"]),
+        status: z.enum(["pending", "in-progress", "delivered", "cancelled"]),
     }),
     params: z.object({
         orderId: z.string().min(1, "Order ID is required"),

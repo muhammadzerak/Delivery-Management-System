@@ -35,7 +35,7 @@ function* updateOrderStatus(action: ReturnType<typeof updateOrderStatusRequest>)
         const res = yield call(api.patch, `/orders/${action.payload.id}/status`, action.payload);
         yield put(updateOrderStatusSuccess(res.data?.data));
     } catch (err: any) {
-        yield put(updateOrderStatusFailure("Failed to fetch partners"));
+        yield put(updateOrderStatusFailure("Failed to update order status"));
     }
 }
 

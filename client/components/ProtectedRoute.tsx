@@ -16,6 +16,7 @@ export default function ProtectedRoute({
     console.log("user, loading", user, loading)
 
     useEffect(() => {
+        if (loading) return;
         if (!loading) {
             console.log("user", user)
             if (!user) router.push("/");

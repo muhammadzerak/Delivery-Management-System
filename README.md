@@ -74,7 +74,7 @@ npm install
 <p>3. Start Server</p>
 
 ```
-npm start
+npm run dev
 ```
 
 <p>4. Open Separate terminal for Client</p>

@@ -11,27 +11,7 @@ import Loader from "./Loader";
 export default function Sidebar({ role }: { role: "admin" | "partner" }) {
     const { logout } = useAuth();
     const dispatch = useDispatch();
-    const { partner, loading } = useSelector((state: RootState) => state.partners);
-    const [userId, setUserId] = useState<string | null>(null);
-
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            try {
-                const parsed = JSON.parse(storedUser);
-                setUserId(parsed?.id || null);
-            } catch (err) {
-                console.error("Error parsing user from localStorage:", err);
-            }
-        }
-    }, []);
-
-    useEffect(() => {
-        if (!userId) return;
-        if (role === "partner" && userId) {
-            dispatch(fetchPartnerDetailsRequest(userId));
-        }
-    }, [dispatch, role, userId]);
+    const { partner, partnerLoading } = useSelector((state: RootState) => state.partners);
 
     const handleToggleAvailability = () => {
         if (!partner) return;
@@ -100,7 +80,7 @@ export default function Sidebar({ role }: { role: "admin" | "partner" }) {
 
                     <div>
                         <div className="my-4 p-3 border rounded-md bg-sidebar-accent ">
-                            {loading ? (
+                            {partnerLoading ? (
                                 <Loader />
                             ) : partner ? (
                                 <button

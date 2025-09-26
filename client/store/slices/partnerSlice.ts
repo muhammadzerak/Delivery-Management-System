@@ -13,6 +13,7 @@ interface PartnerState {
     partner: Partner | null;
     orders: any[];
     loading: boolean;
+    partnerLoading: boolean;
     error: string | null;
 }
 
@@ -21,6 +22,7 @@ const initialState: PartnerState = {
     partner: null,
     orders: [],
     loading: false,
+    partnerLoading: false,
     error: null,
 };
 
@@ -40,14 +42,14 @@ const partnerSlice = createSlice({
             state.error = action.payload;
         },
         fetchPartnerDetailsRequest: (state, action: PayloadAction<any>) => {
-            state.loading = true;
+            state.partnerLoading = true;
         },
         fetchPartnerDetailsSuccess: (state, action: PayloadAction<any>) => {
-            state.loading = false;
+            state.partnerLoading = false;
             state.partner = action.payload;
         },
         fetchPartnerDetailsFailure: (state, action: PayloadAction<string>) => {
-            state.loading = false;
+            state.partnerLoading = false;
             state.error = action.payload;
         },
         fetchPartnersOrdersRequest: (state) => {

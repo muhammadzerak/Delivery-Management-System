@@ -10,14 +10,26 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(
-    cors({
-        origin: "https://delivery-management-system-6bhk.vercel.app",
-        credentials: true,              // allow cookies/auth headers
-    })
-);
 
 app.use(express.json());
+
+const allowedOrigins = [
+    "http://localhost:3000", // local dev
+    "https://delivery-management-system-6bhk.vercel.app" // deployed frontend
+];
+
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true, // allow cookies/authorization headers
+    })
+);
 
 app.get("/", (req, res) => {
     res.json({

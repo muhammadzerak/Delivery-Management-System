@@ -19,6 +19,12 @@ app.use(
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.json({
+        message: "Health Check!"
+    })
+})
+
 app.use("/api/auth", authRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/partners", partnerRoutes);

@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(
     cors({
-        origin: "https://delivery-management-system-6bhk.vercel.app/",
+        origin: "https://delivery-management-system-6bhk.vercel.app",
         credentials: true,              // allow cookies/auth headers
     })
 );

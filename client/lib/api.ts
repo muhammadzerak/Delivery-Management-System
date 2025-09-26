@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL || "https://delivery-management-system-lyart.vercel.app/api",
+    baseURL: process.env.NEXT_PUBLIC_API_URL || "https://delivery-management-system-seven.vercel.app/api",
     withCredentials: true,
 });
 

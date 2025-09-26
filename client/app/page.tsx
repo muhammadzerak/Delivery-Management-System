@@ -5,6 +5,7 @@ import { RootState } from "@/store";
 import { loginRequest } from "@/store/slices/authSlice";
 import { useState } from "react";
 import { useAuthContext } from "@/context/AuthContext";
+import Link from "next/link";
 
 export default function HomePage() {
   const { login } = useAuthContext();
@@ -31,10 +32,7 @@ export default function HomePage() {
 
   return (
     <main className="h-screen flex items-center justify-center bg-background">
-      <form
-        onSubmit={handleLogin}
-        className="bg-card p-6 rounded-lg shadow-lg w-96 space-y-4 border border-border"
-      >
+      <form onSubmit={handleLogin} className="bg-card p-6 rounded-lg shadow-lg w-96 space-y-4 border border-border">
         <h1 className="text-xl font-bold text-card-foreground">Login</h1>
         {error && <p className="text-red-600 text-sm">{error}</p>}
 
@@ -61,6 +59,13 @@ export default function HomePage() {
         >
           {loading ? "Logging in..." : "Login"}
         </button>
+
+        <p className="text-sm text-muted-foreground text-center">
+          Don't have an account?{" "}
+          <Link href="/auth" className="text-primary hover:underline">
+            Register here
+          </Link>
+        </p>
       </form>
     </main>
   );

@@ -13,6 +13,6 @@ export const validate =
                 });
                 next();
             } catch (err: any) {
-                return failure(res, "Validation error", 400, err.errors);
+                return failure(res, "Validation error", 400, err);
             }
         };

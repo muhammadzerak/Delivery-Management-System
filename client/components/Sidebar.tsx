@@ -27,7 +27,6 @@ export default function Sidebar({ role }: { role: "admin" | "partner" }) {
 
     useEffect(() => {
         if (!userId) return;
-        console.log("userId", userId)
         if (role === "partner" && userId) {
             dispatch(fetchPartnerDetailsRequest(userId));
         }

@@ -6,6 +6,7 @@ import { fetchPartnerDetailsRequest, togglePartnerAvaibilityRequest } from "@/st
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "./Loader";
 
 export default function Sidebar({ role }: { role: "admin" | "partner" }) {
     const { logout } = useAuth();
@@ -100,7 +101,7 @@ export default function Sidebar({ role }: { role: "admin" | "partner" }) {
                     <div>
                         <div className="my-4 p-3 border rounded-md bg-sidebar-accent ">
                             {loading ? (
-                                <p className="text-sm text-muted">Loading...</p>
+                                <Loader />
                             ) : partner ? (
                                 <button
                                     onClick={handleToggleAvailability}

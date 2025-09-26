@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const partnerController_1 = require("../controllers/partnerController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const validate_1 = require("../middleware/validate");
+const partnerValidator_1 = require("../validators/partnerValidator");
+const router = (0, express_1.Router)();
+router.get("/", authMiddleware_1.protect, partnerController_1.getPartners);
+router.post("/availability", authMiddleware_1.protect, (0, validate_1.validate)(partnerValidator_1.toggleAvailabilitySchema), partnerController_1.toggleAvailability);
+router.get("/orders", authMiddleware_1.protect, partnerController_1.getMyOrders);
+router.get("/:partnerId/orders", partnerController_1.getPartnerOrders);
+router.get("/:id", authMiddleware_1.protect, partnerController_1.getPartner);
+exports.default = router;

